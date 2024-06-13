@@ -321,8 +321,9 @@ GameObject:
   - component: {fileID: 1219419165}
   - component: {fileID: 1219419164}
   - component: {fileID: 1219419163}
-  - component: {fileID: 1219419168}
   - component: {fileID: 1219419167}
+  - component: {fileID: 1219419169}
+  - component: {fileID: 1219419168}
   m_Layer: 0
   m_Name: Home
   m_TagString: Untagged
@@ -521,12 +522,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219419162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43607cd0cc8534f4aae2e1d9ad54a17c, type: 3}
+  m_Script: {fileID: 11500000, guid: 08912fe7ea7a2cc4a913dc8342bee006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _trigger: {fileID: 1219419169}
   _audioSource: {fileID: 1219419167}
-  _speedVolumeUp: 0.2
-  _onAlarm: 0
+  _volumeRegulationStep: 0.05
+  _delayAfterStep: 0.5
+  _alarmOn: 0
+--- !u!114 &1219419169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219419162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3051343c08cf1c14183415d9886eab56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1397505290
 GameObject:
   m_ObjectHideFlags: 0
