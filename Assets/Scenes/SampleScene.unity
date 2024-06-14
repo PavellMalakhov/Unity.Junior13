@@ -525,10 +525,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08912fe7ea7a2cc4a913dc8342bee006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trigger: {fileID: 1219419169}
+  _thiefDetector: {fileID: 1219419169}
   _audioSource: {fileID: 1219419167}
-  _volumeRegulationStep: 0.05
-  _delayAfterStep: 0.5
+  _volumeRegulationStep: 0.2
+  _volumeMax: 1
+  _volumeMin: 0
   _alarmOn: 0
 --- !u!114 &1219419169
 MonoBehaviour:
@@ -539,7 +540,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219419162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3051343c08cf1c14183415d9886eab56, type: 3}
+  m_Script: {fileID: 11500000, guid: d1e5a85ed297ba74aaa93ebfa310f629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1397505290
@@ -661,6 +662,7 @@ GameObject:
   - component: {fileID: 1488330731}
   - component: {fileID: 1488330730}
   - component: {fileID: 1488330735}
+  - component: {fileID: 1488330736}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -797,6 +799,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1488330736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488330729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc60e86d0a5a39e4692241f6ead03b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1777605926
 GameObject:
   m_ObjectHideFlags: 0
