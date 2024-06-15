@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class AlarmSystem : MonoBehaviour
+public class Alarm : MonoBehaviour
 {
     [SerializeField] private ThiefDetector _thiefDetector;
     [SerializeField] private AudioSource _audioSource;
@@ -14,14 +14,14 @@ public class AlarmSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        _thiefDetector.AlarmEnable += AlarmOn;
-        _thiefDetector.AlarmDisable += AlarmOff;
+        _thiefDetector.AlarmEnabled += AlarmOn;
+        _thiefDetector.AlarmDisabled += AlarmOff;
     }
 
     private void OnDisable()
     {
-        _thiefDetector.AlarmEnable -= AlarmOn;
-        _thiefDetector.AlarmDisable -= AlarmOff;
+        _thiefDetector.AlarmEnabled -= AlarmOn;
+        _thiefDetector.AlarmDisabled -= AlarmOff;
     }
 
     private void AlarmOn()

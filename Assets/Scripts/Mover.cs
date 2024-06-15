@@ -6,6 +6,7 @@ public class Mover : MonoBehaviour
     private const string Vertical = nameof(Vertical);
 
     [SerializeField] private float _moveSpeed;
+
     private Vector3 _direction;
 
     private void Update()

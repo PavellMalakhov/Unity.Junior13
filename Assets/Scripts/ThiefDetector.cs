@@ -3,23 +3,23 @@ using System;
 
 public class ThiefDetector : MonoBehaviour
 {
-    public event Action AlarmEnable;
-    public event Action AlarmDisable;
+    public event Action AlarmEnabled;
+    public event Action AlarmDisabled;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Thief>() != null)
+        if (other.TryGetComponent(out Thief thief))
         {
-            AlarmEnable.Invoke();
+            AlarmEnabled.Invoke();
         }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Thief>() != null)
+        if (other.TryGetComponent(out Thief thief))
         {
-            AlarmDisable.Invoke();
+            AlarmDisabled.Invoke();
         }
     }
 }
