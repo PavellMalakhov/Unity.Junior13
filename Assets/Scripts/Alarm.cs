@@ -28,12 +28,14 @@ public class Alarm : MonoBehaviour
     {
         _audioSource.Play();
         _alarmOn = true;
+        StopAllCoroutines();
         StartCoroutine(AdjustVolume(_volumeMax));
     }
 
     private void AlarmOff()
     {
         _alarmOn = false;
+        StopAllCoroutines();
         StartCoroutine(AdjustVolume(_volumeMin));
     }
 
@@ -41,23 +43,16 @@ public class Alarm : MonoBehaviour
     {
         var wait = new WaitForEndOfFrame();
 
-        while (_alarmOn && _audioSource.volume < targetValue)
+        while ((_alarmOn && _audioSource.volume < targetValue) || (!_alarmOn && _audioSource.volume > targetValue))
         {
             _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, targetValue, _volumeRegulationStep * Time.deltaTime);
 
             yield return wait;
         }
 
-        while (!_alarmOn && _audioSource.volume > targetValue)
+        if (_audioSource.volume == 0)
         {
-            _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, targetValue, _volumeRegulationStep * Time.deltaTime);
-
-            if (_audioSource.volume == 0)
-            {
-                _audioSource.Stop();
-            }
-
-            yield return wait;
+            _audioSource.Stop();
         }
     }
 }
