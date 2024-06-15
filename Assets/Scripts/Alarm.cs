@@ -28,14 +28,12 @@ public class Alarm : MonoBehaviour
     {
         _audioSource.Play();
         _alarmOn = true;
-        StopAllCoroutines();
         StartCoroutine(AdjustVolume(_volumeMax));
     }
 
     private void AlarmOff()
     {
         _alarmOn = false;
-        StopAllCoroutines();
         StartCoroutine(AdjustVolume(_volumeMin));
     }
 
